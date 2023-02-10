@@ -2,12 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
-
+import { StateContextProvider } from "./context/StateContextProvider";
+import './global.css';
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <StateContextProvider>
+      <Router>
+        <App />
+      </Router>
+    </StateContextProvider>
   </React.StrictMode>
 );
